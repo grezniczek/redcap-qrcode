@@ -1,0 +1,32 @@
+{
+    "name": "QR Code",
+    "tt_name": "module_name",
+    "namespace": "DE\\RUB\\QRCodeExternalModule",
+    "description": "A REDCap external module providing an action tag that will generate a QR code when a form is saved.",
+    "tt_description": "module_desc",
+    "documentation": "README.md",
+    "tt_documentation": "module_docs",
+    "authors": [
+        {
+            "name": "Günther Rezniczek",
+            "email": "guenther.rezniczek@rub.de",
+            "institution": "Ruhr-Universität Bochum"
+        }
+    ],
+    "framework-version": 8,
+    "permissions": [
+        "redcap_save_record",
+        "redcap_data_entry_form_top",
+        "redcap_survey_page_top"
+    ],
+    "system-settings": [
+    ],
+    "project-settings": [
+    ],
+    "compatibility": {
+        "php-version-min": "5.6.0",
+        "php-version-max": "",
+        "redcap-version-min": "10.1.0",
+        "redcap-version-max": ""
+     }
+}
