@@ -10,7 +10,7 @@ A REDCap external module providing an action tag that will generate a QR code wh
 
 ## Requirements
 
-- REDCAP 10.1.0 or newer (tested on REDCap 11.1.3)
+- REDCAP 10.1.0 or newer (tested on REDCap 12.4.1)
 
 ## Configuration
 
@@ -58,4 +58,5 @@ The value of *source_field* will be converted to a QR code and stored in the fie
 
 Version | Description
 ------- | ------------------
+v1.0.1  | Replaced a method call that was no longer available in REDCap.
 v1.0.0  | Initial release.
