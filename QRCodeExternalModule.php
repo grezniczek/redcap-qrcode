@@ -127,7 +127,7 @@ class QRCodeExternalModule extends \ExternalModules\AbstractExternalModule {
                 $text = $data[$record]["repeat_instances"][$event_id][$instrument][$repeat_instance][$tag["source"]];
             }
             // Create QRCode (PNG) in a temporary file
-            $tempFile = APP_PATH_TEMP . "temp_QR_" . \Crypto::getGuid() . "_" . time() . ".png";
+            $tempFile = APP_PATH_TEMP . "temp_QR_" . sha1(microtime() . rand(1,10000000)) . "_" . time() . ".png";
             QRcode::png($text, $tempFile, 0, 3, 2);
             $png_or_edoc = "";
             if ($tag["type"] == "text") {

@@ -58,5 +58,6 @@ The value of *source_field* will be converted to a QR code and stored in the fie
 
 Version | Description
 ------- | ------------------
+v1.0.2  | Remove a REDCap v12 dependency.
 v1.0.1  | Replaced a method call that was no longer available in REDCap.
 v1.0.0  | Initial release.
