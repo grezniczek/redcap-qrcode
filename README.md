@@ -53,6 +53,12 @@ The value of *source_field* will be converted to a QR code and stored in the fie
   `@CALCTEXT(concat('<img src="data:image/png;base64, ', [text_qr], '">'))`  
   where `text_qr` is your field with `@QRCODE`.
   - Then, pipe the field with the above calctext into the email message. Thankfully, Rich Text Editor will leave it alone then.
+- **Example:** In a project with a survey queue enabled create an instrument called "QR Example".
+  - Create the following fields
+    - Name=url_source_4_queue, label=Source URL, action tag = @DEFAULT="[survey-queue-url]"
+    - Name=qr_field_action_tag, label=QR Code Generated, action tab=@QRCODE="url_source_4_queue"
+    - Name=qr_image, label=<img src="data:image/png;base64, [qr_field_action_tag]">
+  - Save the form. Go to the form in data entry mode. Press Save and Stay.  The QR Image will be displayed on the page.
 
 ## Changelog
 
