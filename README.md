@@ -54,10 +54,21 @@ The value of *source_field* will be converted to a QR code and stored in the fie
   where `text_qr` is your field with `@QRCODE`.
   - Then, pipe the field with the above calctext into the email message. Thankfully, Rich Text Editor will leave it alone then.
 
+- _How to display, e.g., the Survey Queue Url, on a data entry form_ - This is a generic example illustrating how to get QR codes displayed on data entry or survey pages.
+  - Create the following fields in a project with the survey queue enabled:
+    Variable Name | Field Label | Action Tags / Field Annotation
+    --------------|-------------|----------------------------------
+    sq_url        | Survey Queue Url | `@DEFAULT="[survey-queue-url]" @HIDDEN`
+    sq_qrcode     | QR Cdoe | `@QRCODE="sq_url" @HIDDEN`
+    sq_display    | `<img src="data:image/png;base64, [sq_qrcode]">` | -
+  - Go to the form in data entry mode. Press _Save and Stay_. The QR code will be displayed on the page.
+
+
 ## Changelog
 
 Version | Description
 ------- | ------------------
+v1.0.3  | Added example to README.
 v1.0.2  | Remove a REDCap v12 dependency.
 v1.0.1  | Replaced a method call that was no longer available in REDCap.
 v1.0.0  | Initial release.
