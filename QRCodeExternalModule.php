@@ -52,10 +52,12 @@ class QRCodeExternalModule extends \ExternalModules\AbstractExternalModule {
         $js = [];
         foreach ($tags as $tag) {
             if ($tag["type"] == "file") {
-                $js[] = "$('#{$tag["field"]}-linknew a.fileuploadlink').remove()";
-                $js[] = "$('#{$tag["field"]}-linknew span').not('.edoc-link').remove()";
+				$tagField = preg_replace("/[^a-zA-Z0-9_]/","",$tag["field"]);
+                $js[] = "$('#{$tagField}-linknew a.fileuploadlink').remove()";
+                $js[] = "$('#{$tagField}-linknew span').not('.edoc-link').remove()";
             }
         }
+		
         if (count($js)) {
             print "<script>$(function() { " . join("; ", $js) . " });</script>";
         }
