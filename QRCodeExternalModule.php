@@ -52,9 +52,8 @@ class QRCodeExternalModule extends \ExternalModules\AbstractExternalModule {
         $js = [];
         foreach ($tags as $tag) {
             if ($tag["type"] == "file") {
-				$tagField = preg_replace("/[^a-zA-Z0-9_]/","",$tag["field"]);
-                $js[] = "$('#{$tagField}-linknew a.fileuploadlink').remove()";
-                $js[] = "$('#{$tagField}-linknew span').not('.edoc-link').remove()";
+                $js[] = "$('#{$tag["field"]}-linknew a.fileuploadlink').remove()";
+                $js[] = "$('#{$tag["field"]}-linknew span').not('.edoc-link').remove()";
             }
         }
 		
@@ -89,7 +88,7 @@ class QRCodeExternalModule extends \ExternalModules\AbstractExternalModule {
                     foreach ($matches as $match) {
                         if (array_key_exists($match["f"], $Proj->forms[$instrument]["fields"])) {
                             $tags[] = array(
-                                "field" => $fieldName,
+                                "field" => preg_replace("/[^a-z0-9_]/", "", $fieldName),
                                 "type" => $meta["element_type"],
                                 "source" => $match["f"],
                             );

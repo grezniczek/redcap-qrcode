@@ -68,6 +68,7 @@ The value of *source_field* will be converted to a QR code and stored in the fie
 
 Version | Description
 ------- | ------------------
+v1.0.4  | Set max REDCap version limit to 13.0.99 because of a changed method signature in REDCap 13.1.0<br>Minor security fix (filter text that is output to the client).
 v1.0.3  | Added example to README.
 v1.0.2  | Remove a REDCap v12 dependency.
 v1.0.1  | Replaced a method call that was no longer available in REDCap.
