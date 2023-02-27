@@ -137,22 +137,22 @@ class QRCodeExternalModule extends \ExternalModules\AbstractExternalModule {
             else if ($tag["type"] == "file") {
                 // Determine if there is a need to overwrite
                 // Is there a previous uploaded version?
-                $prev = null;
+                $prev_doc_id = null;
                 $data = REDCap::getData($project_id, "array", $record, $tag["field"], $event_id);
                 if ($repeating_event) {
-                    $prev = $data[$record]["repeat_instances"][$event_id][""][$repeat_instance][$tag["field"]]; 
+                    $prev_doc_id = $data[$record]["repeat_instances"][$event_id][""][$repeat_instance][$tag["field"]]; 
                 }
                 else if ($repeating_form) {
-                    $prev = $data[$record]["repeat_instances"][$event_id][$instrument][$repeat_instance][$tag["field"]];
+                    $prev_doc_id = $data[$record]["repeat_instances"][$event_id][$instrument][$repeat_instance][$tag["field"]];
                 }
                 else {
-                    $prev = $data[$record][$event_id][$tag["field"]];
+                    $prev_doc_id = $data[$record][$event_id][$tag["field"]];
                 }
                 $prevHash = "prev";
                 $newHash = sha1_file($tempFile);
-                if ($prev) {
+                if ($prev_doc_id) {
                     // Determine hash of previous file
-                    $prevFile = Files::copyEdocToTemp($prev, true, true);
+                    $prevFile = Files::copyEdocToTemp($prev_doc_id, true, true);
                     $prevHash = sha1_file($prevFile);
                     unlink($prevFile);
                 }
@@ -167,8 +167,8 @@ class QRCodeExternalModule extends \ExternalModules\AbstractExternalModule {
                         "tmp_name" => $tempFile,
                         "size" => filesize($tempFile),
                     ), $project_id);
-                    if ($prev) {
-                        Files::deleteFileByDocId($prev);
+                    if ($prev_doc_id) {
+                        Files::deleteFileByDocId($prev_doc_id, $project_id);
                     }
                 }
             }
