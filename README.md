@@ -59,7 +59,7 @@ The value of *source_field* will be converted to a QR code and stored in the fie
     Variable Name | Field Label | Action Tags / Field Annotation
     --------------|-------------|----------------------------------
     sq_url        | Survey Queue Url | `@DEFAULT="[survey-queue-url]" @HIDDEN`
-    sq_qrcode     | QR Cdoe | `@QRCODE="sq_url" @HIDDEN`
+    sq_qrcode     | QR Code | `@QRCODE="sq_url" @HIDDEN`
     sq_display    | `<img src="data:image/png;base64, [sq_qrcode]">` | -
   - Go to the form in data entry mode. Press _Save and Stay_. The QR code will be displayed on the page.
 
