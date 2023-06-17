@@ -21,7 +21,7 @@ A REDCap external module providing an action tag that will generate a QR code wh
 
 `@QRCODE="source_field"`
 
-Apply this action tag to a fields of type **Text Box** (no validation) or **File Upload** only, and specifiy the name of the source field (which needs to be on the same form).
+Apply this action tag to a field of type **Text Box** (no validation) or **File Upload** only, and specifiy the name of the source field (which needs to be on the same form).
 
 The value of *source_field* will be converted to a QR code and stored in the field with the action tag. The storage format will depend on the field type:
 
