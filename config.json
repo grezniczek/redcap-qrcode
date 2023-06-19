@@ -22,7 +22,7 @@
     "actiontags": [
         {
             "tag": "@QRCODE",
-            "description": "Encodes a string value in a QR code. Apply this action tag to a field of type <b>Text Box</b> (without validation) or <b>File Upload</b> only, and specifiy the name of the source field (which needs to be on the same form) as action tag parameter: @QRCODE=\"source_field\".<br>The value of the source field will be converted to a QR code and stored in the field with the action tag. The storage format will depend on the field type:<ul><li>PNG file (stored in edocs when used on a file upload field</li><li>Base64-encoded string when used on a textbox field. This could then be used to produce inline-images with &lt;img src=\"data:image/png;base64, [field_with_qrcode]\">."
+            "description": "Encodes a string value in a QR code. Apply this action tag to a field of type <b>Text Box</b> (without validation) or <b>File Upload</b> only, and specifiy the name of the source field (which needs to be on the same form) as action tag parameter: @QRCODE=\"source_field\".<br>The value of the source field will be converted to a QR code and stored in the field with the action tag. The storage format will depend on the field type:<ul><li>PNG file (stored in edocs when used on a file upload field</li><li>Base64-encoded string when used on a textbox field. This could then be used to produce inline-images with &lt;img src=\"data:image/png;base64, [field_with_qrcode]\"></li></ul>."
         }
     ],
     "system-settings": [
