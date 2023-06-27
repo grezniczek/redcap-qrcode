@@ -15,7 +15,7 @@ class QRCodeExternalModule extends \ExternalModules\AbstractExternalModule {
 
     #region Hooks
 
-    function redcap_save_record ($project_id, $record = NULL, $instrument, $event_id, $group_id = NULL, $survey_hash = NULL, $response_id = NULL, $repeat_instance = 1) {
+    function redcap_save_record (int $project_id, string $record = NULL, string $instrument, int $event_id, int $group_id = NULL, string $survey_hash = NULL, int $response_id = NULL, int $repeat_instance = 1) {
         // Only when an instrument is saved and the @QRCODE action tag is present
         if ($instrument) {
             $tags = $this->getQRCodes($project_id, $instrument);
@@ -25,14 +25,14 @@ class QRCodeExternalModule extends \ExternalModules\AbstractExternalModule {
         }
     }
 
-    function redcap_survey_page_top($project_id, $record = NULL, $instrument, $event_id, $group_id = NULL, $survey_hash, $response_id = NULL, $repeat_instance = 1) {
+    function redcap_survey_page_top( int $project_id, string $record = NULL, string $instrument, int $event_id, int $group_id = NULL, string $survey_hash, int $response_id = NULL, int $repeat_instance = 1 ) {
         $tags = $this->getQRCodes($project_id, $instrument);
         if (count($tags)) {
             $this->injectJS($tags);
         }
     }
 
-    function redcap_data_entry_form_top($project_id, $record = NULL, $instrument, $event_id, $group_id = NULL, $repeat_instance = 1) {
+    function redcap_data_entry_form_top( int $project_id, string $record = NULL, string $instrument, int $event_id, int $group_id = NULL, int $repeat_instance = 1 ) {
         $tags = $this->getQRCodes($project_id, $instrument);
         if (count($tags)) {
             $this->injectJS($tags);
