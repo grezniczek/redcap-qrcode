@@ -68,7 +68,8 @@ The value of *source_field* will be converted to a QR code and stored in the fie
 
 Version | Description
 ------- | ------------------
-v1.2.0  | Add QR code description to Action Tags popup
+v1.2.1  | Prevent some PHP8 warnings.
+v1.2.0  | Add QR code description to Action Tags popup.
 v1.1.0  | Updated version requirements due to method signature change (13.1.0).
 v1.0.3  | Set max REDCap version limit to 13.0.99 because of a changed method signature in REDCap 13.1.0<br>Minor security fix (filter text that is output to the client).<br>Added example to README.
 v1.0.2  | Remove a REDCap v12 dependency.
