@@ -19,7 +19,7 @@
         "redcap_data_entry_form_top",
         "redcap_survey_page_top"
     ],
-    "actiontags": [
+    "action-tags": [
         {
             "tag": "@QRCODE",
             "description": "See English.ini",
