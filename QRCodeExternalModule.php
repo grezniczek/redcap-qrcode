@@ -9,10 +9,6 @@ class QRCodeExternalModule extends \ExternalModules\AbstractExternalModule {
 
     private $at = "@QRCODE";
 
-    function __construct() {
-        parent::__construct();
-    }
-
     #region Hooks
 
     function redcap_save_record ($project_id, $record, $instrument, $event_id, $group_id, $survey_hash, $response_id, $repeat_instance = 1) {
@@ -112,7 +108,16 @@ class QRCodeExternalModule extends \ExternalModules\AbstractExternalModule {
      */
     private function saveQRCode($project_id, $record, $instrument, $event_id, $repeat_instance, $tags) {
         global $Proj;
-        require_once APP_PATH_LIBRARIES . "phpqrcode/qrlib.php";
+        // Load QR library - note: Changed path in REDCap 13.9.3+
+        if (file_exists(APP_PATH_LIBRARIES . "phpqrcode/qrlib.php")) {
+            require_once APP_PATH_LIBRARIES . "phpqrcode/qrlib.php";
+        }
+        else if (file_exists(APP_PATH_LIBRARIES . "phpqrcode/lib/full/qrlib.php")) {
+            require_once APP_PATH_LIBRARIES . "phpqrcode/lib/full/qrlib.php";
+        }
+        else {
+            throw new \Exception("Failed to load REDCap's QR library.");
+        }
         require_once APP_PATH_CLASSES . "Records.php";
         require_once APP_PATH_CLASSES . "Files.php";
         $source_fields = array_unique(array_map(function($tag) { return $tag["source"]; }, $tags));
