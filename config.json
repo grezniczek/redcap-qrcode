@@ -13,7 +13,7 @@
             "institution": "Ruhr-Universität Bochum"
         }
     ],
-    "framework-version": 11,
+    "framework-version": 12,
     "permissions": [
         "redcap_save_record",
         "redcap_data_entry_form_top",

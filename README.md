@@ -68,6 +68,7 @@ The value of *source_field* will be converted to a QR code and stored in the fie
 
 Version | Description
 ------- | ------------------
+v1.2.3  | Fixed a "PHP Deprecated" warning; set framework version to 12.
 v1.2.2  | Fixed issue with path to QR library - this occurred in REDCap 13.9.3+
 v1.2.1  | Add QR code description to Action Tags popup.
 v1.2.0  | Prevent some PHP8 warnings.
