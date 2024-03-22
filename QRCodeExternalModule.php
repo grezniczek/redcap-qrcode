@@ -79,7 +79,7 @@ class QRCodeExternalModule extends \ExternalModules\AbstractExternalModule {
                 $meta = $Proj->metadata[$fieldName];
                 // Only text (no validation) and file uploads allowed!
                 if (($meta["element_type"] == "text" || $meta["element_type"] == "file") && $meta["element_validation_type"] == null) {
-                    $misc = $Proj->metadata[$fieldName]["misc"];
+                    $misc = $Proj->metadata[$fieldName]["misc"] ?? "";
                     preg_match_all($re, $misc, $matches, PREG_SET_ORDER, 0);
                     foreach ($matches as $match) {
                         if (array_key_exists($match["f"], $Proj->forms[$instrument]["fields"])) {
