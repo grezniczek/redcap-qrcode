@@ -14,11 +14,6 @@
         }
     ],
     "framework-version": 12,
-    "permissions": [
-        "redcap_save_record",
-        "redcap_data_entry_form_top",
-        "redcap_survey_page_top"
-    ],
     "action-tags": [
         {
             "tag": "@QRCODE",
@@ -29,11 +24,5 @@
     "system-settings": [
     ],
     "project-settings": [
-    ],
-    "compatibility": {
-        "php-version-min": "7.4.0",
-        "php-version-max": "",
-        "redcap-version-min": "13.1.0",
-        "redcap-version-max": ""
-     }
+    ]
 }
